@@ -1,0 +1,215 @@
+/* RESET BÁSICO Y PALETA DE COLORES */
+:root {
+    --primary-color: #4dc3ff; /* Azul claro/celeste para acento */
+    --secondary-color: rgba(255, 255, 255, 0.1); /* Fondo sutilmente oscuro */
+    --text-color: #dee3e9; /* Texto claro */
+    --white: #ffffff;
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --box-shadow-medium: 0 10px 20px rgba(0, 0, 0, 0.6);
+    --dark-text: #343a40; /* Texto oscuro para las tarjetas */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: 60px; 
+    background-color: #000000;
+}
+
+/* --- VIDEO DE FONDO --- */
+.video-background {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    overflow: hidden;
+}
+
+#bg-video {
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    object-fit: cover; 
+}
+
+/* --- ANIMACIÓN DE ENTRADA --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Retrasos y Fondos Semitransparentes */
+#intro { 
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    animation-delay: 0.1s; 
+}
+#technologies { 
+    background-color: rgba(0, 0, 0, 0.6);
+    animation-delay: 0.3s; 
+}
+#projects { 
+    background-color: rgba(0, 0, 0, 0.7);
+    animation-delay: 0.5s; 
+}
+#certificates { 
+    background-color: rgba(0, 0, 0, 0.6);
+    animation-delay: 0.7s; 
+}
+#contact { 
+    background-color: rgba(0, 0, 0, 0.95) !important; 
+    animation-delay: 0.9s;
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- INTRODUCCIÓN --- */
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 5px solid var(--primary-color); 
+    display: block; 
+    margin: 0 auto;
+}
+
+/* --- TECNOLOGÍAS (CARRUSEL AUTOMÁTICO) --- */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 9)); } 
+}
+
+.carousel {
+    overflow: hidden; 
+    white-space: nowrap;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.carousel-track-auto {
+    display: flex;
+    animation: scroll 30s linear infinite; 
+}
+
+.tech-item {
+    width: 250px;
+    text-align: center;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    flex-shrink: 0;
+    color: var(--text-color); 
+}
+
+.tech-item i {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    transition: transform 0.2s;
+}
+
+.carousel:hover .carousel-track-auto {
+    animation-play-state: paused;
+}
+.tech-item:hover i {
+    transform: scale(1.1);
+}
+
+/* --- ESTILOS DE TARJETA GENERALES Y AJUSTE DE IMAGENES --- */
+.card {
+    background-color: rgba(255, 255, 255, 0.95) !important; 
+    color: var(--dark-text); /* Texto oscuro para asegurar legibilidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); 
+}
+
+.certificate-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+
+/* Certificados más pequeños */
+#certificates .certificate-image {
+    height: 150px; 
+}
+
+
+/* --- ESTILO ESPECIAL PARA PROYECTO DE TESIS/FINAL --- */
+.project-card-thesis {
+    background-color: #173f5f !important; /* Fondo oscuro/azul marino sólido */
+    color: var(--white) !important; /* Texto blanco en la tarjeta de tesis */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card-thesis h3 {
+    color: var(--primary-color) !important;
+}
+
+.project-card-thesis .card-text {
+    color: var(--text-color) !important; /* Asegura que la descripción sea clara */
+}
+
+.project-card-thesis:hover {
+    transform: scale(1.03); 
+}
+
+/* --- CONTACTO --- */
+.social-icons a {
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color); 
+    transform: translateY(-2px);
+}
+.typed-cursor {
+    color: var(--primary-color);
+    font-size: 1.1em;
+    opacity: 1;
+    animation: typedjsBlink 0.7s infinite;
+}
+
+/* Animación de parpadeo del cursor */
+@keyframes typedjsBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* El texto animado debe destacar */
+#typed-text-output {
+    display: inline-block;
+    color: var(--primary-color);
+}
