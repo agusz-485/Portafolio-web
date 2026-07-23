@@ -1,0 +1,13 @@
+[build]
+  # Specifying the subfolder where the React Vite project is located
+  base = "react-portfolio"
+  # Build command to run inside the base directory
+  command = "npm run build"
+  # Publish directory relative to the base directory (Vite outputs to 'dist')
+  publish = "dist"
+
+# Handles SPA redirects to prevent routing 404 errors
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
