@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  color-scheme: dark;
+}
+
+body{
+  @apply bg-[#071023] text-slate-100 antialiased;
+}
+/* prevent horizontal scroll caused by animated stripes */
+body{ overflow-x: hidden; }
+
+.glass-card{
+  /* solid dark card to improve legibility */
+  background-color: rgba(3,18,30,0.95);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  transform: translateZ(0);
+  box-shadow: 0 6px 18px rgba(2,8,20,0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle bubble effect on hover */
+.glass-card::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%,-50%) scale(0.6);
+  border-radius: 9999px;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.02), rgba(255,255,255,0.01) 40%, transparent 60%);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(.2,.9,.2,1), opacity 0.45s ease;
+  pointer-events: none;
+}
+.glass-card:hover::before{ transform: translate(-50%,-50%) scale(1); opacity: 0.6 }
+
+.badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  /* solid badge background */
+  background-color: rgba(10,60,100,0.9);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Pixel animation for profile photo */
+.pixel-anim{
+  animation: pixelate 600ms steps(8);
+  image-rendering: pixelated;
+}
+
+@keyframes pixelate{
+  0% { transform: scale(1); filter: blur(0px); }
+  50% { transform: scale(1.1); filter: blur(1px); }
+  100% { transform: scale(1); filter: blur(0px); }
+}
+
+/* Fade out with pixel effect */
+.fade-out-pixel{
+  animation: fadeOutPixel 600ms steps(8);
+  image-rendering: pixelated;
+}
+
+@keyframes fadeOutPixel{
+  0% { opacity: 1; filter: blur(0px); }
+  50% { opacity: 0.5; filter: blur(2px); }
+  100% { opacity: 0; filter: blur(4px); }
+}
+
+/* Fade in with pixel effect */
+.fade-in-pixel{
+  animation: fadeInPixel 600ms steps(8);
+  image-rendering: pixelated;
+}
+
+@keyframes fadeInPixel{
+  0% { opacity: 0; filter: blur(4px); }
+  50% { opacity: 0.5; filter: blur(2px); }
+  100% { opacity: 1; filter: blur(0px); }
+}
+
+/* Cursor-follow background blob */
+#cursor-bg{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 600px;
+  height: 600px;
+  pointer-events: none;
+  transform: translate(calc(var(--cursor-x, 0px) - 300px), calc(var(--cursor-y, 0px) - 300px));
+  /* slightly stronger blob so it's perceptible behind solid cards */
+  background: radial-gradient(closest-side, rgba(6,75,150,0.20), rgba(6,75,150,0.06) 40%, transparent 70%);
+  filter: blur(44px) saturate(105%);
+  transition: transform 0.08s linear;
+  z-index: 0;
+}
+
+/* ensure main content is above the effect */
+/* ensure main and header are above the animated background */
+header{ position: relative; z-index: 20 }
+main{ position: relative; z-index: 20 }
+
+/* Rainbow stripes animation */
+.rainbow{
+  height: 100vh;
+  width: 0;
+  top: 0;
+  position: fixed;
+  transform: translateX(-25vw) rotate(10deg);
+  transform-origin: top right;
+  left: 0;
+  animation-name: slide;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+  will-change: transform;
+  /* increase visibility slightly while remaining subtle */
+  opacity: 0.12;
+  filter: blur(10px) saturate(95%);
+  mix-blend-mode: overlay;
+}
+
+@keyframes slide {
+  from { transform: translateX(-25vw) rotate(10deg); }
+  to { transform: translateX(125vw) rotate(10deg); }
+}
+
+.h{
+  /* soften highlights and tint blue, lower intensity */
+  box-shadow: 0 0 40vh 30vh rgba(6,95,170,0.08);
+  width: 100vw;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.v{
+  box-shadow: 0 0 30vw 20vw rgba(6,95,170,0.08);
+  width: 0;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+/* ensure cards sit above background */
+.glass-card{ z-index: 30 }
+
+/* ripple effect for clicks inside cards */
+.glass-card { position: relative; overflow: hidden }
+.glass-card .ripple{
+  position: absolute;
+  border-radius: 9999px;
+  transform: scale(0);
+  background: rgba(255,255,255,0.08);
+  animation: ripple 600ms ease-out;
+  pointer-events: none;
+}
+@keyframes ripple{
+  to{ transform: scale(6); opacity: 0 }
+}
+
+/* press effect */
+.glass-card:active{ transform: translateY(1px) scale(0.995); box-shadow: 0 4px 12px rgba(2,8,20,0.7) }
+
+/* keep stripes behind content */
+.rainbow, .h, .v, #cursor-bg { z-index: 0; pointer-events: none }
