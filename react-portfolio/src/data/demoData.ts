@@ -33,12 +33,12 @@ export const techCategories = [
 export const projects = [
   {
     id: 'p1',
-    title: 'STOCKEATE/Sistema de Gestión de Inventario',
-    title_en: 'Inventory Management System',
-    description: 'Aplicación movil para la reducción de costos operativos con gestión de stock en tiempo real.',
-    description_en: 'Application for reducing operational costs with real-time stock management.',
-    tags: ['Node.js', 'PostgreSQL', 'Scrum', 'Jira'],
-    link: 'https://canva.link/3qpipu855e3q9ka',
+    title: 'STOCKEATE / Gestión de Stock',
+    title_en: 'STOCKEATE / Stock Management',
+    description: 'Aplicación móvil multiplataforma desarrollada con React Native para la optimización de stock y logística en tiempo real.',
+    description_en: 'Multiplatform mobile application developed with React Native for real-time stock and logistics optimization.',
+    tags: ['React Native', 'Expo', 'PostgreSQL', 'Prisma', 'Node.js'],
+    link: 'https://www.canva.com/design/DAG4gBY1w9s/JC9-gbFYPBHsnaxz6O-8Hg/view?utm_content=DAG4gBY1w9s&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb945d149e3',
     images: ['/assets/STOCKEATE.png']
   },
   {
@@ -53,11 +53,31 @@ export const projects = [
   },
   {
     id: 'p3',
-    title: 'Palindromo challenge',
-    title_en: 'Modern Portfolio Website',
-    description: 'Juego web de palindromos desarrollador con javascript.',
-    description_en: 'palindrome web game developer using JavaScript',
-    tags: ['HTML', 'Javascript'],
+    title: 'Conversor de Monedas',
+    title_en: 'Currency Converter',
+    description: 'Conversor de divisas en tiempo real que consume la API ExchangeRate-API.',
+    description_en: 'Real-time currency converter that consumes the ExchangeRate-API.',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Fetch API'],
+    link: 'https://agusz-485.github.io/cambio_mn/',
+    images: ['/assets/conversorimg.png']
+  },
+  {
+    id: 'p4',
+    title: 'Enerliz (Videojuego Educativo)',
+    title_en: 'Enerliz (Educational Video Game)',
+    description: 'Videojuego infantil interactivo de aprendizaje. Desarrollador principal en Unity.',
+    description_en: 'Interactive learning video game for children. Lead Developer in Unity.',
+    tags: ['Unity', 'C#', 'OOP'],
+    link: 'https://enerliz.itch.io/enerliz',
+    images: ['/assets/enerliz.png']
+  },
+  {
+    id: 'p5',
+    title: 'Desafío de Palíndromos',
+    title_en: 'Palindrome Challenge',
+    description: 'Juego web interactivo de verificación de palíndromos desarrollado con JavaScript.',
+    description_en: 'Interactive palindrome verification web game developed with JavaScript.',
+    tags: ['HTML5', 'CSS3', 'JavaScript'],
     link: 'https://agusz-485.github.io/Palindromo_challenge/',
     images: ['/assets/Palindromo.png']
   }
@@ -140,7 +160,7 @@ export const certifications = [
   },
   {
     id: 'c9',
-    title: 'GIT: Desarrollo C0laborativo',
+    title: 'GIT: Desarrollo Colaborativo',
     title_en: 'GIT: Collaborative Development',
     issuer: 'Educación IT',
     issuer_en: 'Education IT',
@@ -187,6 +207,7 @@ export const certifications = [
 
 export const socialLinks = {
   linkedin: 'https://www.linkedin.com/in/agust%C3%ADn-nu%C3%B1ez-7a7121294/',
+  github: 'https://github.com/agusz-485',
   email: 'agustinnu595@gmail.com',
   phone: '+54 11 68178613'
 }
