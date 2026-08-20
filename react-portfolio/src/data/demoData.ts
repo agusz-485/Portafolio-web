@@ -33,6 +33,16 @@ export const techCategories = [
 export const projects = [
   {
     id: 'p1',
+    title: 'CareConnect / Coordinación de Cuidado',
+    title_en: 'CareConnect / Care Coordination',
+    description: 'Plataforma para digitalizar el cuidado de adultos mayores, conectando familiares, cuidadores y administradores. Rol de PM y Frontend Developer.',
+    description_en: 'Platform to digitalize elderly care, connecting families, caregivers, and admins. Role: PM & Frontend Developer.',
+    tags: ['React', 'Spring Boot', 'MySQL', 'Project Management', 'Frontend'],
+    link: 'https://github.com/agusz-485/Proyecto-CareConnect-',
+    images: ['/assets/careconnect.jpg']
+  },
+  {
+    id: 'p2',
     title: 'STOCKEATE / Gestión de Stock',
     title_en: 'STOCKEATE / Stock Management',
     description: 'Aplicación móvil multiplataforma desarrollada con React Native para la optimización de stock y logística en tiempo real.',
@@ -42,7 +52,7 @@ export const projects = [
     images: ['/assets/STOCKEATE.png']
   },
   {
-    id: 'p2',
+    id: 'p3',
     title: 'Plataforma E-commerce',
     title_en: 'E-commerce Platform',
     description: 'Plataforma de ventas con React y TypeScript, panel de administrador funcional para manejo de stock y datos de venta.',
@@ -52,7 +62,7 @@ export const projects = [
     images: ['/assets/capsuleshop.png']
   },
   {
-    id: 'p3',
+    id: 'p4',
     title: 'Conversor de Monedas',
     title_en: 'Currency Converter',
     description: 'Conversor de divisas en tiempo real que consume la API ExchangeRate-API.',
@@ -62,7 +72,7 @@ export const projects = [
     images: ['/assets/conversorimg.png']
   },
   {
-    id: 'p4',
+    id: 'p5',
     title: 'Enerliz (Videojuego Educativo)',
     title_en: 'Enerliz (Educational Video Game)',
     description: 'Videojuego infantil interactivo de aprendizaje. Desarrollador principal en Unity.',
@@ -72,7 +82,7 @@ export const projects = [
     images: ['/assets/enerliz.png']
   },
   {
-    id: 'p5',
+    id: 'p6',
     title: 'Desafío de Palíndromos',
     title_en: 'Palindrome Challenge',
     description: 'Juego web interactivo de verificación de palíndromos desarrollado con JavaScript.',
