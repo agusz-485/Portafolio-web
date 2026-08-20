@@ -3,7 +3,7 @@ export const techCategories = [
     id: 'frontend',
     title: 'Frontend',
     title_en: 'Frontend',
-    items: ['ReactJS',  'Tailwind CSS', 'Bootstrap', 'HTML5', 'CSS3']
+    items: ['ReactJS', 'Tailwind CSS', 'Bootstrap', 'HTML5', 'CSS3']
     , images: []
   },
   {
@@ -97,12 +97,12 @@ export const certifications = [
     title_en: 'Pescar Foundation Job Skills',
     issuer: 'Fundación Pescar / JP Morgan / Visma',
     issuer_en: 'Pescar Foundation / JP Morgan / Visma',
-    date:'2026',
-    images:[]
+    date: '2026',
+    images: []
 
   },
-   
-   {
+
+  {
     id: 'c5',
     title: 'Desarrollo Web con HTML',
     title_en: 'Web development with HTML',
@@ -111,7 +111,7 @@ export const certifications = [
     date: '2026'
     , images: ['/assets/htmlIT.png']
   },
- {
+  {
     id: 'c6',
     title: 'Javascript desde cero',
     title_en: 'Javascript from scratch',
@@ -120,7 +120,7 @@ export const certifications = [
     date: '2026'
     , images: ['/assets/javascriptit.png']
   },
-   {
+  {
     id: 'c7',
     title: 'Programación orientada a objetos con IA',
     title_en: 'Object-oriented programming with AI',
@@ -129,7 +129,7 @@ export const certifications = [
     date: '2026'
     , images: ['/assets/poo.png']
   },
-   {
+  {
     id: 'c8',
     title: 'IA para programadores',
     title_en: 'AI for programmers',
@@ -138,7 +138,7 @@ export const certifications = [
     date: '2026'
     , images: ['/assets/iaIT.png']
   },
-   {
+  {
     id: 'c9',
     title: 'GIT: Desarrollo C0laborativo',
     title_en: 'GIT: Collaborative Development',
@@ -147,7 +147,7 @@ export const certifications = [
     date: '2026'
     , images: ['/assets/gitIT.png']
   },
-     {
+  {
     id: 'c10',
     title: 'Introducción a Python',
     title_en: 'Introduction to Python',
@@ -181,7 +181,7 @@ export const certifications = [
     issuer: 'Udemy',
     issuer_en: 'Udemy',
     date: '2024'
-    , images: ['/assets/cert-responsive.png']
+    , images: ['/assets/python.jpg']
   }
 ]
 
